@@ -1082,7 +1082,7 @@ var syscalls_amd64 = []*Syscall{
 		&VmaType{TypeCommon: TypeCommon{TypeName: "vma", FldName: "addr", TypeSize: 8}},
 		&LenType{IntTypeCommon: IntTypeCommon{TypeCommon: TypeCommon{TypeName: "len", FldName: "len", TypeSize: 8}}, Buf: "addr"},
 		&FlagsType{IntTypeCommon: IntTypeCommon{TypeCommon: TypeCommon{TypeName: "mmap_prot", FldName: "prot", TypeSize: 8}}, Vals: []uint64{4, 1, 2}, BitMask: true},
-		&FlagsType{IntTypeCommon: IntTypeCommon{TypeCommon: TypeCommon{TypeName: "mmap_flags", FldName: "flags", TypeSize: 8}}, Vals: []uint64{1, 2, 524288, 4096, 0, 16, 1024}, BitMask: true},
+		&FlagsType{IntTypeCommon: IntTypeCommon{TypeCommon: TypeCommon{TypeName: "mmap_flags", FldName: "flags", TypeSize: 8}}, Vals: []uint64{1, 2, 524288, 4096, 4096, 0, 16, 1024}},
 		&ResourceType{TypeCommon: TypeCommon{TypeName: "fd", FldName: "fd", TypeSize: 4}},
 		&IntType{IntTypeCommon: IntTypeCommon{TypeCommon: TypeCommon{TypeName: "fileoff", FldName: "offset", TypeSize: 8}}, Kind: 1},
 	}},
@@ -2128,6 +2128,7 @@ var consts_amd64 = []ConstValue{
 	{Name: "MADV_WILLNEED", Value: 3},
 	{Name: "MAP_32BIT", Value: 524288},
 	{Name: "MAP_ANON", Value: 4096},
+	{Name: "MAP_ANONYMOUS", Value: 4096},
 	{Name: "MAP_FILE"},
 	{Name: "MAP_FIXED", Value: 16},
 	{Name: "MAP_PRIVATE", Value: 2},
@@ -2446,4 +2447,4 @@ var consts_amd64 = []ConstValue{
 	{Name: "WUNTRACED", Value: 2},
 }
 
-const revision_amd64 = "06d50288c46275b56218cab0097fcb71a7f0f80e"
+const revision_amd64 = "dee31ee6f3446ce1c50ea5e6a9b82d6e48598ce3"
