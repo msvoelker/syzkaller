@@ -15,7 +15,12 @@
 #define _GNU_SOURCE
 #endif
 
+#if GOOS_freebsd
+#include <sys/endian.h> // for htobe*.
+#else
 #include <endian.h> // for htobe*.
+#endif
+
 #include <stdint.h>
 #include <stdio.h> // for fmt arguments
 #include <stdlib.h>
